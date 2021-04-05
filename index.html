@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Agregamos el framework Bootstrap para simplificarnos el estilo de la visualización.-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- production version, optimized for size and speed -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<body>
+    <div id="app">
+        {{ message }}
+        <h1 v-text="message" v-if="visualizar"></h1>
+        <!--  v-on es lo mismo que @ -->
+        <button v-on:click="alternar">Alternar</button>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // Instancia de Vue
+    let vueConfig = {
+        el: '#app',
+        data: {
+            message: 'NT2',
+            visualizar: true
+        },
+        methods: {
+            alternar() {
+                this.visualizar = !this.visualizar
+            }
+        },
+        computed:{
+
+        },
+        created() {
+            
+        }
+    }
+    var miVue = new Vue(vueConfig)
+</script>
